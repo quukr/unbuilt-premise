@@ -1,23 +1,74 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../styles/global.css";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+    title?: string;
+    description?: string;
+    }
+
+const {
+    title = "Unbuilt Premise | A Podcast on Ideas, Systems and What Lies Beneath",
+    description = "Ideas are rarely as simple as they look. Conversations about the ideas, decisions and assumptions behind the things people build, question and pursue.",
+    } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://unbuiltpremise.com");
+
+// Define schema as a JS object
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "PodcastSeries",
+    "name": "Unbuilt Premise",
+    "description": "Conversations about the ideas, decisions and assumptions behind the things people build, question and pursue.",
+    "author": {
+    "@type": "Person",
+    "name": "Emmanuel"
+    },
+    "url": "https://unbuiltpremise.com",
+    "sameAs": [
+    "https://open.spotify.com/show/3nQ4vXMH1WkOmDwAabuzPF",
+    "https://www.youtube.com/@UnbuiltPremise",
+    "https://x.com/unbuiltpremise",
+    "https://www.instagram.com/unbuiltpremise/",
+    "https://www.tiktok.com/@unbuiltpremise",
+    "https://www.linkedin.com/company/unbuilt-premise",
+    "https://medium.com/@unbuiltpremise"
+    ]
+    };
+---
+
+<!doctype html>
+<html lang="en" class="bg-charcoal text-offwhite antialiased scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={canonicalURL} />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <link rel="icon" type="image/svg" href="/favicon.svg" />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- Schema.org for Podcast -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-lime selection:text-charcoal">
+<slot />
+</body>
+</html>

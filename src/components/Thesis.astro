@@ -1,0 +1,43 @@
+---
+---
+<section id="about" class="border-t border-charcoal-border bg-charcoal-light/30 py-20">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="space-y-3 mb-10">
+            <p class="text-xs font-mono tracking-widest text-lime uppercase">About The Show</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-offwhite tracking-tight">
+                Going underneath the obvious story.
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-base text-offwhite-muted leading-relaxed font-serif">
+            <div>
+                <p>
+                    Unbuilt Premise is not built around celebrity status, quick life advice, or routine interviews. The focus is on examining what someone believed at the beginning, what they tested, where things failed, and how reality forced them to revise their models.
+                </p>
+            </div>
+            <div>
+                <p>
+                    The host is not there to pose as the expert, but to ask the questions that uncover the mechanics of complex systems across engineering, medicine, software, and research.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Keyword Spectrum -->
+        <div class="mt-12 pt-8 border-t border-charcoal-border">
+            <p class="text-xs font-mono text-offwhite-muted uppercase tracking-wider mb-4">Core Spectrum</p>
+            <div class="flex flex-wrap gap-2 text-xs font-sans">
+                {
+                    [
+                        "Difficult Problems", "Systems & Infrastructure", "Scientific Method",
+                        "Healthcare Delivery", "Engineering Constraints", "Decision Architecture",
+                        "African Innovation", "Experimentation", "Course Corrections"
+                    ].map((item) => (
+                            <span class="px-3 py-1.5 bg-charcoal border border-charcoal-border text-offwhite rounded-sm">
+              {item}
+            </span>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

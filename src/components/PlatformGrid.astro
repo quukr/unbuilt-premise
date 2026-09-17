@@ -1,0 +1,38 @@
+---
+const channels = [
+    { name: "Spotify", desc: "Full episodes & audio", url: "https://open.spotify.com/show/3nQ4vXMH1WkOmDwAabuzPF" },
+    { name: "YouTube", desc: "Long-form video & discussions", url: "https://www.youtube.com/@UnbuiltPremise" },
+    { name: "X (Twitter)", desc: "Show notes & commentary", url: "https://x.com/unbuiltpremise" },
+    { name: "TikTok", desc: "Clips & dialogue highlights", url: "https://www.tiktok.com/@unbuiltpremise" },
+    { name: "Instagram", desc: "Visuals & excerpts", url: "https://www.instagram.com/unbuiltpremise/" },
+    { name: "Medium", desc: "Essays & expanded thoughts", url: "https://medium.com/@unbuiltpremise" },
+    { name: "LinkedIn", desc: "Professional network & updates", url: "https://www.linkedin.com/company/unbuilt-premise" }
+];
+---
+<section id="listen" class="border-t border-charcoal-border bg-charcoal-light/20 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl mb-10 space-y-2">
+            <p class="text-xs font-mono tracking-widest text-lime uppercase">Network</p>
+            <h2 class="text-3xl font-bold text-offwhite tracking-tight">Follow & Stream</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {channels.map((c) => (
+                    <a
+                            href={c.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="p-5 bg-charcoal border border-charcoal-border hover:border-lime rounded flex items-center justify-between group transition-colors"
+                    >
+                        <div>
+                            <div class="font-semibold text-offwhite group-hover:text-lime transition-colors">{c.name}</div>
+                            <div class="text-xs text-offwhite-muted mt-0.5">{c.desc}</div>
+                        </div>
+                        <svg class="w-4 h-4 text-offwhite-muted group-hover:text-lime group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+            ))}
+        </div>
+    </div>
+</section>

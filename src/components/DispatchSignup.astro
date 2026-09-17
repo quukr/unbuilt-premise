@@ -1,0 +1,33 @@
+---
+---
+<section id="dispatch" class="border-t border-charcoal-border py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center space-y-6">
+        <p class="text-xs font-mono tracking-widest text-lime uppercase">The Dispatch</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-offwhite tracking-tight">
+            Show notes and companion essays.
+        </h2>
+        <p class="text-offwhite-muted font-serif text-base max-w-xl mx-auto leading-relaxed">
+            Receive references, reading lists, and background thinking directly in your inbox.
+        </p>
+
+        <form
+                action="mailto:unbuiltpremise@gmail.com"
+                method="GET"
+                class="pt-2 flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+        >
+            <input type="hidden" name="subject" value="Unbuilt Premise Reader Subscription" />
+            <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                    class="bg-charcoal-light border border-charcoal-border px-4 py-3 text-sm text-offwhite placeholder:text-offwhite-muted/50 rounded focus:outline-none focus:border-lime flex-1"
+            />
+            <button
+                    type="submit"
+                    class="bg-lime text-charcoal font-semibold text-sm px-6 py-3 rounded hover:bg-lime-hover transition-colors"
+            >
+                Subscribe
+            </button>
+        </form>
+    </div>
+</section>
